@@ -1,15 +1,13 @@
 import { test, expect} from '@playwright/test';
-import { LoginPage } from '../Pages/LoginPage';
-import { HomePage } from '../Pages/HomePage';
-import { Dashboard } from '../Pages/Dashboard';
+import { HomePage } from '../nutrafunnel/pages/HomePage';
+import { LoginPage } from '../nutrafunnel/pages/LoginPage';
+import { Dashboard } from '../nutrafunnel/pages/Dashboard';
 import * as dotenv from 'dotenv';
 
 // Load environment variables from .env file
 dotenv.config();
 
-
-
-test('Home Page NutraFunnel', async ({ page }) => {
+test('Home Page NutraFunnel to Login Page', async ({ page }) => {
   const homePage = new HomePage(page)
   await page.goto('');
 
@@ -19,7 +17,7 @@ test('Home Page NutraFunnel', async ({ page }) => {
 
 });
 
-test('Login Page Loaded', async ({ page }) => {
+test('Login Page Loaded and Signed-in Successfully ', async ({ page }) => {
   const loginPage = new LoginPage(page)
   const dashpase = new Dashboard(page)
   await page.goto('/login/');
