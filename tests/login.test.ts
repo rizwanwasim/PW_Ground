@@ -31,7 +31,7 @@ test('Login Page Loaded and Signed-in Successfully ', async ({ page }) => {
   await loginPage.signin.click();
   await expect(dashpase.dashLogo).toBeVisible();
   await expect(dashpase.logoutButton).toBeVisible();
-});
+}); 
 
 // test('Dashboard Page Loaded', async ({ page }) => {
 //   const dashpase = new Dashboard(page)
